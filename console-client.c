@@ -44,7 +44,7 @@ struct console_client {
 	bool		newline;
 };
 
-static const uint8_t esc_str[] = { 0x1b };
+static const uint8_t esc_str[] = { 0x1d };
 
 static enum process_rc process_tty(struct console_client *client)
 {
@@ -66,7 +66,7 @@ static enum process_rc process_tty(struct console_client *client)
 			client->newline = true;
 			continue;
 		}
-	        if (buf[i] == 0x1b ) {
+	        if (buf[i] == 0x1d ) {
                         client->newline = true;
                         return PROCESS_EXIT;
                 }
