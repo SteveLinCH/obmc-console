@@ -44,7 +44,7 @@ struct console_client {
 	bool		newline;
 };
 
-static const uint8_t esc_str[] = { '~', '.' };
+static const uint8_t esc_str[] = { '~', '[' };
 
 static enum process_rc process_tty(struct console_client *client)
 {
