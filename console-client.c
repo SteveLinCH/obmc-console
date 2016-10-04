@@ -66,11 +66,6 @@ static enum process_rc process_tty(struct console_client *client)
 			client->newline = true;
 			continue;
 		}
-	        if (buf[i] == 0x1d ) {
-                        client->newline = true;
-                        return PROCESS_EXIT;
-                }
-
 		if (!client->newline)
 			continue;
 
